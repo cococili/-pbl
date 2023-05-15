@@ -3,7 +3,7 @@ im=rgb2gray(im);
 figure;
 subplot(131),imshow(im);title('原图空间域');
 %绘制原图频谱
-F0=fft2(im);
+F0=fft2(im);%这里要注意一定加一个反转，不加虽然不会错，但是频谱图效果不好
 F00=log(abs(fftshift(F0))+1);
 subplot(132);imshow(F00,[]);title('原图幅度谱');
 subplot(133);imshow(angle(fftshift(F0)),[]);title('原图相位谱');
